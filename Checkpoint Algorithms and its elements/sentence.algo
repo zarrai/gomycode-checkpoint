@@ -1,0 +1,29 @@
+ALGORITHM read_sentence
+VAR length,j,k: INTEGER :=0;
+VAR STRING sentance[] = "Programming is fun.";
+
+BEGIN
+//get length of sentance
+FOR (length=0,sentance[i] != '.',ilength++)
+    length = length +1;
+END FOR
+Write("Length of the string: " ,length)
+
+//get number of words
+FOR (words=0,words<length,words++)
+    IF(words=' ') THEN 
+        words = words +1;
+    END IF
+END FOR
+Write("number of words: ", words+1)
+
+
+//get number of vowels
+FOR (vowels=0,vowels<length,vowels++)
+    IF (vowels == 'a'|| vowels == 'e'|| vowels == 'i' ||vowels == 'o' ||vowels == 'u'||vowels == ' ')
+        j = j +1;
+    END IF
+END FOR
+Write("number of vowels: ",vowels)
+
+END
