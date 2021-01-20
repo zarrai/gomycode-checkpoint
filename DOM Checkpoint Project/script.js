@@ -82,10 +82,15 @@ var app = {
     $(".product-remove").on("click", app.removeProduct);
     $(".product-plus").on("click", app.addProduct);
     $(".product-subtract").on("click", app.subtractProduct);
+  },
+
+  heart: function () {
+    "use strict";
     $('.like-btn').on('click', function() {
       $(this).toggleClass('is-active');
     });
-  },
+  }
 };
 
 app.attachEvents();
+app.heart();
