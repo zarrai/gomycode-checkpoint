@@ -1,29 +1,34 @@
-ALGORITHM read_sentence
-VAR length,j,k: INTEGER :=0;
-VAR STRING sentance[] = "Programming is fun.";
-
+ALGORITHM algorithm_sentence
+VAR
+    sentence : STRING ;
+    nbchar , nbword , nbvow , i : INTEGER ;
 BEGIN
-//get length of sentance
-FOR (length=0,sentance[i] != '.',ilength++)
-    length = length +1;
-END FOR
-Write("Length of the string: " ,length)
+ nbvow := 0;
+ nbchar :=0;
+ nbword:= 1;
+ i :=0;
+ 
+FOR i FROM 1 to sentence.lenght DO
+    i++ ;
+    IF (sentenc[i] = " ") THEN
+        nbword+=1;
 
-//get number of words
-FOR (words=0,words<length,words++)
-    IF(words=' ') THEN 
-        words = words +1;
-    END IF
-END FOR
-Write("number of words: ", words+1)
+    ELSE ( sentenc[i] = "A" OR  sentenc[i] ="E" OR sentenc[i] ="I" OR sentenc[i] ="O") THEN
+        nbvow+=1
+    END_IF
 
 
-//get number of vowels
-FOR (vowels=0,vowels<length,vowels++)
-    IF (vowels == 'a'|| vowels == 'e'|| vowels == 'i' ||vowels == 'o' ||vowels == 'u'||vowels == ' ')
-        j = j +1;
-    END IF
-END FOR
-Write("number of vowels: ",vowels)
+
+    IF (sentenc[i] <> ".") THEN
+        nbchar +=1 ;
+    END_IF
+       
+  
+
+END_FOR
+
+ WRITE("the numbre of the words is :" , nbword);
+ WRITE("the numbre of the characters is :" ,  nbchar);
+ WRITE("the numbre of the vowels  is :" , nbvow);
 
 END
