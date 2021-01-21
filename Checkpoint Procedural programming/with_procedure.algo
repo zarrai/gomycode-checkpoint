@@ -1,0 +1,33 @@
+PROCEDURE dot_product(VAR v1 , v2 : ARRAY_OF INTEGER; VAR ps : INTEGER)
+VAR
+    i :INTEGER;
+BEGIN
+ ps :=0;
+ i:= 0;
+IF (v1.length <> v2.length) THEN
+    WRITE ("vectors with diferent size");
+    ps := NaN ;
+END_IF
+FOR i FROM 0 TO v1.length-1 STEP 1  DO
+    ps := ps + (v1[i] * v2[i]) ;
+END_FOR
+END
+
+
+ALGORITHM orthogonal_vectors
+VAR
+    v1 , v2 : ARRAY_OF INTEGER[20];
+    ps : INTEGER;
+BEGIN
+    
+
+ dot_product(v1 , v2 , ps)
+
+IF (ps = 0) THEN
+     WRITE("two vectors are orthogonal");
+ ELSE
+     WRITE("two vectors are not orthogonal");
+ END_IF
+
+
+END

@@ -1,0 +1,31 @@
+ FUNCTION dot_product(VAR v1 , v2 : ARRAY_OF INTEGER) : INTEGER
+ VAR
+        ps : INTEGER;
+         i :INTEGER;
+ BEGIN
+   ps :=0;
+   i:= 0 ;
+    FOR i FROM 0 TO v1.length-1 STEP 1  DO
+    ps = ps + (v1[i] * v2[i]) ;
+END_FOR
+     RETURN ps ;
+ END
+
+
+ ALGORITHM orthogonal_vectors
+VAR
+    v1 , v2 : ARRAY_OF INTEGER[20];
+    ps : INTEGER;
+BEGIN
+  
+ ps:= dot_product(v1 , v2 , ps) 
+
+  IF ( ps = 0 ) THEN
+
+      WRITE("two vectors are orthogonal");
+   ELSE
+      WRITE("two vectors are not orthogonal");
+ END_IF
+
+
+END
