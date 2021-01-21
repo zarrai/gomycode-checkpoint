@@ -1,0 +1,39 @@
+ALGORITHM Solution_2
+VAR
+     tab1  tab2  : ARRAY_OF INTEGER[10];
+     tab3 : ARRAY_OF INTEGER[20];
+     i , count , sum : INTEGER;
+     htab := HASH_TABLE<INTEGER,INTEGER>
+BEGIN
+    FOR i FROM 0 TO tab1.length-1 STEP 1  DO
+        IF (htab.lookup(tab1[i]) = TRUE) THEN
+            count := htab.get(tab1[i]) ;
+            htab.insert(tab1[i] , count+1)
+        
+            ELSE
+              htab.insert(tab1[i] , 1)
+            END_IF
+       
+    END_FOR
+
+
+
+    FOR i FROM 0 TO tab2.length-1 STEP 1  DO
+        IF (htab.lookup(tab2[i]) = TRUE) THEN
+            count := htab.get(tab2[i]) ;
+            htab.insert(tab2[i] , count+1)
+        
+            ELSE
+              htab.insert(tab1[i] , 1)
+            END_IF
+       
+    END_FOR
+
+ tab3 := htab.getkeys();
+ FOR i FROM 0 TO tab3.length-1 STEP 1  DO
+     IF (htab.get(tab3[i]) > 1 ) THEN
+         sum = sum + tab3[i];
+     END_IF
+ END_FOR
+
+END

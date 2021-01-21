@@ -1,0 +1,34 @@
+ALGORITHM Solution_1
+VAR
+    tab1  tab2  : ARRAY_OF INTEGER[10];
+    i  j : INTEGER ;
+    sum : INTEGER :=0 ;
+    found : BOOLEAN ;
+BEGIN
+    FOR i FROM 0 TO tab1.length-1 STEP 1 DO
+        found = false ;
+      FOR j FROM 0 TO tab2.length-1 STEP 1 DO
+           IF (tab1[i] = tab2[j]) THEN
+               found = true ;
+           END_IF
+      
+    END_FOR
+    IF (NOT found) THEN
+        sum = sum + tab1[i] ;
+    END_IF
+    END_FOR
+
+      FORj FROM 0 TO tab2.length-1 STEP 1 DO
+        found = false ;
+    FOR i FROM 0 TO tab1.length-1 STEP 1 DO
+           IF (tab2[j] = tab1[i]) THEN
+               found = true ;
+           END_IF
+      
+    END_FOR
+    IF (NOT found) THEN
+        sum = sum + tab2[j] ;
+    END_IF
+
+    WRITE(sum);
+END
