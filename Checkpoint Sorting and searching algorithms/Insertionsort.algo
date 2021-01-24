@@ -1,0 +1,25 @@
+PROCEDURE insertion_sort(VAR arr : ARRAY_OF INTEGER)
+VAR
+    pos :INTEGER;
+    val_to_insert : INTEGER;
+BEGIN
+
+FOR i FROM 0 TO arr.length-1 STEP 1  DO
+    val_to_insert = arr[i];
+    pos = i;
+    WHILE (pos > 0  AND arr[pos-1] > val_to_insert) DO
+        arr[pos] = arr[pos-1];
+        pos = pos-1;
+    END_WHILE
+    arr[pos] = val_to_insert;
+END_FOR
+END
+
+ALGORITHM sort 
+VAR
+    arr : ARRAY_OF INTEGER[20];
+BEGIN
+    
+ insertion_sort(arr)
+
+END
