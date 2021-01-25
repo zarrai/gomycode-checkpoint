@@ -4,7 +4,7 @@ VAR
     val_to_insert : INTEGER;
 BEGIN
 
-FOR i FROM 0 TO arr.length-1 STEP 1  DO
+FOR i FROM 0 TO arr.length STEP 1  DO
     val_to_insert = arr[i];
     pos = i;
     WHILE (pos > 0  AND arr[pos-1] > val_to_insert) DO
